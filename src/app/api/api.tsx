@@ -3,6 +3,23 @@ import axios from 'axios';
 import * as streamingAvailability from "streaming-availability";
 require('dotenv').config()
 
+type Movie = { 
+		poster_path: string;
+		adult: boolean; 
+		overview: string;  
+		release_date: string;  
+		genre_ids: number[];  
+		id: number;
+		original_title: string;  
+		original_language: string;  
+		title: string;  
+		backdrop_path: string;  
+		popularity: number;
+		vote_count: number;
+		video: boolean;  
+		vote_average: number; 
+}
+
 const RAPID_API_KEY = process.env.RAPID_API_KEY
 const tmdbApiKey = process.env.TMDB_API_KEY
 const tmdbBaseUrl = 'https://api.themoviedb.org/3'
@@ -21,7 +38,7 @@ export const client = new streamingAvailability.Client(new streamingAvailability
 // 	console.log(streamingOption.link);
 // });
 
-export async function fetchMovies(query) {
+export async function fetchMovies(query: string) {
 	try {
 	  const response = await axios.get(`${tmdbBaseUrl}/search/movie`, {
 		params: {
@@ -34,7 +51,7 @@ export async function fetchMovies(query) {
 	  });
   
 	  // Extract relevant data
-	  const movies = response.data.results.map(movie => ({
+	  const movies: Movie[] = response.data.results.map((movie: Movie) => ({
 		id: movie.id,
 		title: movie.title,
 	  }));
