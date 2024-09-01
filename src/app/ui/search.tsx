@@ -17,7 +17,6 @@ export default function Search({ placeholder }: { placeholder: string }) {
       console.log(term);
     }
 
-    // generic search functtion with changeable placeholder value
    
     return (
       <div className="relative flex flex-1 flex-shrink-0">
