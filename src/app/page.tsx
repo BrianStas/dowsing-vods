@@ -1,7 +1,17 @@
-import Image from "next/image";
-import { client } from "./api/api";
 
-export default async function Home() {
+import { client } from "./api/api";
+import Search from "./ui/search";
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
 
   let show = await client.showsApi.getShow(
 	{id: "tt3393786", country: "us"}
