@@ -7,11 +7,9 @@ export default async function Home({
 }: {
   searchParams?: {
     query?: string;
-    page?: string;
   };
 }) {
   const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
 
   let show = await client.showsApi.getShow(
 	{id: "tt3393786", country: "us"}
