@@ -21,7 +21,6 @@ const streamChoice: string = show.streamingOptions["us"][0].link;
 //tmdb will provide the ID used to get the streaming options from streamingAvailability
 // Need to find quickest route to obtain list of movies with IDs from TMDB
 
-// Taking a break from this while I work on Voyage project
 
 
   return (
