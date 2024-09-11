@@ -19,8 +19,7 @@ console.log(show.title);
 console.log(show.overview);
 const streamChoice: string = show.streamingOptions["us"][0].link;
 //tmdb will provide the ID used to get the streaming options from streamingAvailability
-// Need to find quickest route to obtain list of movies with IDs from TMDB
-// learning Next.js is harder than I gave it credit for
+
 
 
   return (
