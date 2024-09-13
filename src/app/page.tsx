@@ -19,7 +19,7 @@ console.log(show.title);
 console.log(show.overview);
 const streamChoice: string = show.streamingOptions["us"][0].link;
 //tmdb will provide the ID used to get the streaming options from streamingAvailability
-
+// new project should start rolling soon
 
 
   return (
