@@ -19,6 +19,8 @@ console.log(show.title);
 console.log(show.overview);
 const streamChoice: string = show.streamingOptions["us"][0].link;
 
+// tomorrow is certainly the day
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
