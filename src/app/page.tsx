@@ -12,20 +12,23 @@ export default async function Home({
   const query = searchParams?.query || '';
 
   let show = await client.showsApi.getShow(
-	{id: "tt3393786", country: "us"}
+	{id: "movie/343611", country: "us"}
 );
 
 console.log(show.title);
 console.log(show.overview);
 const streamChoice: string = show.streamingOptions["us"][0].link;
 
-// tomorrow is certainly the day
 
+
+// to search availability by TMDB ID it must be "movie/{id}"
+// search url would be fetch('https://api.themoviedb.org/3/search/movie?query={searchTerm}&include_adult=false&language=en-US&page=1', options)
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <p>{show.title}</p>
      <p>{streamChoice}</p> 
+     
     </main>
   );
 }
